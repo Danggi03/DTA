@@ -72,7 +72,7 @@ public class sequence_Number_Rule {
                     "\nPlease try again." +
                     "\n->");
         }
-        return 0;
+        return errCode;
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -82,11 +82,12 @@ public class sequence_Number_Rule {
         String[] temp;
 
         do {
-            temp = sc.nextLine().split(" ");
             errCode = 0;
+            temp = sc.nextLine().split(" ");
             FindOutOfBoundsNumber(temp);
             FindOutOfWrongTyping(temp);
         } while (FindOutErrCode() != 0);
+
 
         for (int i = 0; i < temp.length; i++) {
             System.out.println(temp[i]);

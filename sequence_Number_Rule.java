@@ -1,4 +1,4 @@
-package LifeIdea;
+package sequence;
 
 public class sequence_Number_Rule {
     int[] n = new int[10];

@@ -92,11 +92,21 @@ public class sequence_Number_Rule {
             boolean examB = true;
             while (examB) {
             if (examA == 1) {
-                System.out.print("How many terms so far?" +
-                        "\n(You don't have to worry about the numbers you entered before.)" +
-                        "\n-> ");
+                print_UserK();
                 aS.find_out_term(sc.nextInt());
-                System.out.println("The value of the " + aS.getK() + " term is " + aS.getM());
+                while (aS.getM() == -1 || aS.getM() == Integer.MAX_VALUE) {
+                    if (aS.getM() == -1) {
+                        System.out.print("This isn't correct value." +
+                                "\n please try again." +
+                                "\n-> ");
+                        aS.find_out_term(sc.nextInt());
+                    }
+                    else {
+                        print_Overflow();
+                        aS.find_out_term(sc.nextInt());
+                    }
+                }
+                print_kTerm_answer(aS.getK(), aS.getM());
                 examB = false;
             }
             else if (examA == 2) {
@@ -105,12 +115,9 @@ public class sequence_Number_Rule {
                 examB = false;
             }
             else {
-                System.out.print("This isn't correct value." +
-                        "\n please try again." +
-                        "\n-> ");
+                print_WrongValue();
                 examA = sc.nextInt();
             }
-
             }
         }
 
@@ -125,27 +132,34 @@ public class sequence_Number_Rule {
             boolean examB = true;
             while (examB) {
                 if (examA == 1) {
-                    System.out.print("How many terms so far?" +
-                            "\n(You don't have to worry about the numbers you entered before.)" +
-                            "\n-> ");
+                    print_UserK();
                     gS.find_out_term(sc.nextInt());
-                    System.out.println("The value of the " + gS.getK() + " term is " + gS.getM());
+                    while (gS.getM() == -1 || gS.getM() == Integer.MAX_VALUE) {
+                        if (gS.getM() == -1) {
+                            print_WrongValue();
+                            gS.find_out_term(sc.nextInt());
+                        }
+                        else {
+                            print_Overflow();
+                            gS.find_out_term(sc.nextInt());
+                            }
+                        }
+                    print_kTerm_answer(gS.getK(), gS.getM());
                     examB = false;
-                }
+                    }
                 else if (examA == 2) {
                     System.out.print("The numbers you entered is a arithmetical sequence in which the first-term is " +
                             num[0] + " and the difference is " + gS.getRatio());
                     examB = false;
                 }
                 else {
-                    System.out.print("This isn't correct value." +
-                            "\n please try again." +
-                            "\n-> ");
+                    print_WrongValue();
                     examA = sc.nextInt();
                 }
 
             }
         }
+
 
         //계차수열
         difference_Sequence dS = new difference_Sequence();
@@ -155,4 +169,24 @@ public class sequence_Number_Rule {
         fibonacci_Sequence fS = new fibonacci_Sequence();
 
     }
+
+    public static void print_Overflow() {
+        System.out.print("This term is out of integer range. (2147483647 ++)" +
+                "\nPlease try again." +
+                "\n-> ");
+    }
+    public static void print_UserK() {
+        System.out.print("How many terms so far?" +
+                "\n(You don't have to worry about the numbers you entered before.)" +
+                "\n-> ");
+    }
+    public static void print_WrongValue() {
+        System.out.print("This isn't correct value." +
+                "\n please try again." +
+                "\n-> ");
+    }
+    public static void print_kTerm_answer(int k, int m) {
+        System.out.println("The value of the " + k + " term is " + m);
+    }
+
 }

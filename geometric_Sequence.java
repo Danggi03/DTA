@@ -12,11 +12,12 @@ public class geometric_Sequence extends sequence_Number_Rule {
     public geometric_Sequence(int[] usersA) {
         //a[0] = a a[1] = b a[2] = c
         a = usersA;
-        if (a[0] != 0 && (int) Math.pow(a[1], 2) == a[0] * a[2]) {
-            r = a[1] / a[0]; //비 입력
+        if ((a[0] != 0) && ((int) Math.pow(a[1], 2) == (a[0] * a[2]))) {
             available = true;
+            r = a[1] / a[0]; //비 입력
         }
-        available = false;
+        else
+            available = false;
     }
 
     /**
@@ -26,7 +27,10 @@ public class geometric_Sequence extends sequence_Number_Rule {
      */
     public static void find_out_term (int n){
         k = n;
-        m = (int) (a[0] * Math.pow(r,k - 1));
+        if (k > 0)
+            m = (int) (a[0] * Math.pow(r,k - 1));
+        else
+            m = -1;
     }
 
     /**
@@ -56,4 +60,5 @@ public class geometric_Sequence extends sequence_Number_Rule {
     public static int getRatio() {
         return r;
     }
+
 }

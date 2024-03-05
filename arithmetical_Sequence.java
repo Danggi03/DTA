@@ -10,15 +10,15 @@ public class arithmetical_Sequence extends sequence_Number_Rule {
     static int m;    // m: 사용자가 만약 다른 항의 값을 알아보려고 했을 때 저장되는 상수
     static boolean available; //해당 클래스가 사용가능한지.
     public arithmetical_Sequence(int[] usersA) {
-        this.a = usersA;
+        a = usersA;
 
         if (a[1] - a[0] == a[2] - a[1]) {
             d = a[1] - a[0]; //공차 입력
-            this.available = true;
+            available = true;
             k = 0;
         }
         else
-            this.available = false;
+            available = false;
     }
 
         /**

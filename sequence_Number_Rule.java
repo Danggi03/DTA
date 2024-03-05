@@ -13,7 +13,7 @@ public class sequence_Number_Rule {
     19152990: 앞선 두가지가 모두 일어남.
      */
     static int errCode = 0;
-    final static int MIN = 2;     //최소값
+    final static int MIN = 3;     //최소값
     final static int MAX = 10;    //최대값
 
     /**
@@ -113,8 +113,40 @@ public class sequence_Number_Rule {
 
             }
         }
+
         //등비수열
-        geometric_Sequence gS = new geometric_Sequence();
+        geometric_Sequence gS = new geometric_Sequence(num);
+        if (gS.getAvailable()) {
+            System.out.print("The numbers you entered are geometric sequence with a ratio value " + gS.getRatio() +
+                    ".\nDo you find the other term?" +
+                    "\n1. Yes\t2. No" +
+                    "\n-> ");
+            int examA = sc.nextInt();
+            boolean examB = true;
+            while (examB) {
+                if (examA == 1) {
+                    System.out.print("How many terms so far?" +
+                            "\n(You don't have to worry about the numbers you entered before.)" +
+                            "\n-> ");
+                    gS.find_out_term(sc.nextInt());
+                    System.out.println("The value of the " + gS.getK() + " term is " + gS.getM());
+                    examB = false;
+                }
+                else if (examA == 2) {
+                    System.out.print("The numbers you entered is a arithmetical sequence in which the first-term is " +
+                            num[0] + " and the difference is " + gS.getRatio());
+                    examB = false;
+                }
+                else {
+                    System.out.print("This isn't correct value." +
+                            "\n please try again." +
+                            "\n-> ");
+                    examA = sc.nextInt();
+                }
+
+            }
+        }
+
         //계차수열
         difference_Sequence dS = new difference_Sequence();
         //조화수열

@@ -12,12 +12,13 @@ public class geometric_Sequence extends sequence_Number_Rule {
     public geometric_Sequence(long[] usersA) {
         //a[0] = a a[1] = b a[2] = c
         a = usersA;
-        if ((a[0] != 0) && ((int) Math.pow(a[1], 2) == (a[0] * a[2]))) {
-            available = true;
-            r = (int) (a[1] / a[0]); //비 입력
+        for (int freq = 0; freq < a.length - 2; freq++) {
+            if ((a[0] != 0) && ((int) Math.pow(a[freq + 1], 2) == (a[freq] * a[freq + 2]))) {
+                available = true;
+                r = (int) (a[1] / a[0]); //비 입력
+            } else
+                available = false;
         }
-        else
-            available = false;
     }
 
     /**

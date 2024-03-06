@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class sequence_Number_Rule {
     //사용자로부터 받을 숫자
-    static int[] num;
+    static long[] num; /////////// int -> double 로 바꿈으로써 확장할 예정 .... To be continue
 
     /*
     -에러코드
@@ -76,7 +76,7 @@ public class sequence_Number_Rule {
             FindOutOfWrongTyping(temp);
         } while (FindOutErrCode() != 0);
 
-        num = new int[temp.length]; //재정의
+        num = new long[temp.length]; //재정의
 
         for (int i = 0; i < temp.length; i++)
             num[i] = Integer.parseInt(temp[i]);
@@ -93,17 +93,17 @@ public class sequence_Number_Rule {
             while (examB) {
             if (examA == 1) {
                 print_UserK();
-                aS.find_out_term(sc.nextInt());
-                while (aS.getM() == -1 || aS.getM() == Integer.MAX_VALUE) {
+                aS.find_out_term(sc.nextLong());
+                while (aS.getM() == -1 || aS.getM() == Long.MAX_VALUE) {
                     if (aS.getM() == -1) {
                         System.out.print("This isn't correct value." +
                                 "\n please try again." +
                                 "\n-> ");
-                        aS.find_out_term(sc.nextInt());
+                        aS.find_out_term(sc.nextLong());
                     }
                     else {
                         print_Overflow();
-                        aS.find_out_term(sc.nextInt());
+                        aS.find_out_term(sc.nextLong());
                     }
                 }
                 print_kTerm_answer(aS.getK(), aS.getM());
@@ -133,15 +133,15 @@ public class sequence_Number_Rule {
             while (examB) {
                 if (examA == 1) {
                     print_UserK();
-                    gS.find_out_term(sc.nextInt());
-                    while (gS.getM() == -1 || gS.getM() == Integer.MAX_VALUE) {
+                    gS.find_out_term(sc.nextLong());
+                    while (gS.getM() == -1 || gS.getM() == Long.MAX_VALUE) {
                         if (gS.getM() == -1) {
                             print_WrongValue();
-                            gS.find_out_term(sc.nextInt());
+                            gS.find_out_term(sc.nextLong());
                         }
                         else {
                             print_Overflow();
-                            gS.find_out_term(sc.nextInt());
+                            gS.find_out_term(sc.nextLong());
                             }
                         }
                     print_kTerm_answer(gS.getK(), gS.getM());
@@ -159,7 +159,6 @@ public class sequence_Number_Rule {
 
             }
         }
-
 
         //계차수열
         difference_Sequence dS = new difference_Sequence();
@@ -185,7 +184,7 @@ public class sequence_Number_Rule {
                 "\n please try again." +
                 "\n-> ");
     }
-    public static void print_kTerm_answer(int k, int m) {
+    public static void print_kTerm_answer(long k, long m) {
         System.out.println("The value of the " + k + " term is " + m);
     }
 

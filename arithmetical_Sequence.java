@@ -13,10 +13,7 @@ public class arithmetical_Sequence extends sequence_Number_Rule {
     public arithmetical_Sequence(long[] usersA) {
         a = usersA;
         for (int freq = 0; freq < a.length - 2; freq++) {
-            if(a[1] - a[0] == a[freq + 2] - a[freq + 1])
-                available = true;
-            else
-                available = false;
+            available = a[1] - a[0] == a[freq + 2] - a[freq + 1];
             if (!available) //해당 클래스가 사용불가 하므로 for 강제종료 수단
                 freq = a.length + 1;
         }

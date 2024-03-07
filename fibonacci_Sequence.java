@@ -11,12 +11,8 @@ public class fibonacci_Sequence {
     static String seqName = "Fibonacci-Sequence";
     public fibonacci_Sequence(long[] userA) {
         a = userA;
-        for (int freq = 0; freq <= a.length - 3; freq++) {
-            if (a[freq] + a[freq + 1] == a[freq + 2])
-                available = true;
-            else
-                available = false;
-        }
+        for (int freq = 0; freq <= a.length - 3; freq++)
+            available = a[freq] + a[freq + 1] == a[freq + 2];
     }
 
     /**

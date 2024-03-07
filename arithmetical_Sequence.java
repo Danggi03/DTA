@@ -28,7 +28,7 @@ public class arithmetical_Sequence extends sequence_Number_Rule {
          * 참고) d 값이 있어야 실행될 수 있다.
          * @param n n번째 항
          */
-        public static void find_out_term (long n){
+        public void find_out_term (long n){
             k = n;
             if (d != 0)
                     m = a[0] + (n - 1) * d;
@@ -45,28 +45,28 @@ public class arithmetical_Sequence extends sequence_Number_Rule {
     /**
      * @return 공차를 반환한다.
      */
-    public static long getDifference() {
+    public long getDifference() {
         return d;
     }
 
     /**
      * @return 몇 번째 항인지를 반환한다.
      */
-    public static long getK() {
+    public long getK() {
         return k;
     }
 
     /**
      * @return k번째 항을 반환한다.
      */
-    public static long getM() {
+    public long getM() {
         return m;
     }
 
     /**
      * @return 해당 클래스가 등차수열임을 알린다.
      */
-    public static String getSeqName() {
+    public String getSeqName() {
         return seqName;
     }
 }

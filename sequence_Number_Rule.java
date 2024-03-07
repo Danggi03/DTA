@@ -24,8 +24,8 @@ public class sequence_Number_Rule {
      */
     public static void FindOutOfWrongTyping(String[] temp) {
         try {
-            for (int freq = 0; freq < temp.length; freq++)
-                if (!Character.isDigit(Integer.parseInt(temp[freq]))) ;
+            for (String s : temp)
+                if (!Character.isDigit(Integer.parseInt(s))) ;
         }
         catch (NumberFormatException e) {
             errCode += 1465; //각 철자 대문자의 알파벳 순서를 따옴

@@ -27,7 +27,7 @@ public class geometric_Sequence extends sequence_Number_Rule {
      * 참고) d 값이 있어야 실행될 수 있다.
      * @param n n번째 항
      */
-    public static void find_out_term (long n){
+    public void find_out_term (long n){
         k = n;
         if (k > 0)
             m = (long) (a[0] * Math.pow(r,k - 1));
@@ -45,28 +45,28 @@ public class geometric_Sequence extends sequence_Number_Rule {
     /**
      * @return 몇 번째 항인지를 반환한다.
      */
-    public static long getK() {
+    public long getK() {
         return k;
     }
 
     /**
      * @return k번째 항을 반환한다.
      */
-    public static long getM() {
+    public long getM() {
         return m;
     }
 
     /**
      * @return 비를 반환한다.
      */
-    public static int getRatio() {
+    public int getRatio() {
         return r;
     }
 
     /**
      * @return 해당 클래스가 등비수열임을 알린다.
      */
-    public static String getSeqName() {
+    public String getSeqName() {
         return seqName;
     }
 }

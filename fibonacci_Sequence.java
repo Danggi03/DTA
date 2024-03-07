@@ -19,7 +19,7 @@ public class fibonacci_Sequence {
      * F 수열의 n번째 항을 찾아주는 메소드다.
      * @param n 번째.
      */
-    public static void find_out_term (long n){
+    public void find_out_term (long n){
         k = n;
         m = (long) ((long) 1 / Math.sqrt(5) * ((Math.pow((1 + Math.sqrt(5)) / 2, k)) - (Math.pow((1 - Math.sqrt(5)) / 2, k))));
     }
@@ -34,21 +34,21 @@ public class fibonacci_Sequence {
     /**
      * @return 몇 번째 항인지를 반환한다.
      */
-    public static long getK() {
+    public long getK() {
         return k;
     }
 
     /**
      * @return k번째 항을 반환한다.
      */
-    public static long getM() {
+    public long getM() {
         return m;
     }
 
     /**
      * @return 해당 클래스가 피보나치 수열임을 알린다.
      */
-    public static String getSeqName() {
+    public String getSeqName() {
         return seqName;
     }
 }

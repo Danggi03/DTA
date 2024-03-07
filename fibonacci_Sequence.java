@@ -50,7 +50,7 @@ public class fibonacci_Sequence {
     }
 
     /**
-     * @return 해당 클래스가 등비수열임을 알린다.
+     * @return 해당 클래스가 피보나치 수열임을 알린다.
      */
     public static String getSeqName() {
         return seqName;

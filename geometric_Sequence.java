@@ -9,6 +9,7 @@ public class geometric_Sequence extends sequence_Number_Rule {
     static long k;    // k: 사용자가 추가적으로 k번째 항의 수를 알기 위해 필요시 입력할 상수
     static long m;    // m: 사용자가 만약 다른 항의 값을 알아보려고 했을 때 저장되는 상수
     static boolean available; //해당 클래스가 사용가능한지.
+    static String seqName = "Geometric-Sequence";
     public geometric_Sequence(long[] usersA) {
         //a[0] = a a[1] = b a[2] = c
         a = usersA;
@@ -62,4 +63,10 @@ public class geometric_Sequence extends sequence_Number_Rule {
         return r;
     }
 
+    /**
+     * @return 해당 클래스가 등비수열임을 알린다.
+     */
+    public static String getSeqName() {
+        return seqName;
+    }
 }

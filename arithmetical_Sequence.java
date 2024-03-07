@@ -9,6 +9,7 @@ public class arithmetical_Sequence extends sequence_Number_Rule {
     static long k;    // k: 사용자가 추가적으로 k번째 항의 수를 알기 위해 필요시 입력할 상수
     static long m;    // m: 사용자가 만약 다른 항의 값을 알아보려고 했을 때 저장되는 상수
     static boolean available; //해당 클래스가 사용가능한지.
+    static String seqName = "Arithmetical-Sequence";
     public arithmetical_Sequence(long[] usersA) {
         a = usersA;
         for (int freq = 0; freq < a.length - 2; freq++) {
@@ -63,6 +64,13 @@ public class arithmetical_Sequence extends sequence_Number_Rule {
      */
     public static long getM() {
         return m;
+    }
+
+    /**
+     * @return 해당 클래스가 등차수열임을 알린다.
+     */
+    public static String getSeqName() {
+        return seqName;
     }
 }
 

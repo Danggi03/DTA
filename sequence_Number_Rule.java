@@ -1,5 +1,7 @@
 package sequence;
 
+import java.text.DecimalFormat;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class sequence_Number_Rule {
@@ -96,9 +98,7 @@ public class sequence_Number_Rule {
                 aS.find_out_term(sc.nextLong());
                 while (aS.getM() == -1 || aS.getM() == Long.MAX_VALUE) {
                     if (aS.getM() == -1) {
-                        System.out.print("This isn't correct value." +
-                                "\n please try again." +
-                                "\n-> ");
+                        print_WrongValue();
                         aS.find_out_term(sc.nextLong());
                     }
                     else {
@@ -111,7 +111,9 @@ public class sequence_Number_Rule {
             }
             else if (examA == 2) {
                 System.out.print("The numbers you entered is a arithmetical sequence in which the first-term is " +
-                        num[0] + " and the difference is " + aS.getDifference());
+                        num[0] + " and the difference is " + aS.getDifference() +
+                        "\n-> " +
+                        Arrays.toString(num));
                 examB = false;
             }
             else {
@@ -149,7 +151,9 @@ public class sequence_Number_Rule {
                     }
                 else if (examA == 2) {
                     System.out.print("The numbers you entered is a arithmetical sequence in which the first-term is " +
-                            num[0] + " and the difference is " + gS.getRatio());
+                            num[0] + " and the difference is " + gS.getRatio() +
+                            "\n-> " +
+                            Arrays.toString(num));
                     examB = false;
                 }
                 else {
@@ -159,18 +163,51 @@ public class sequence_Number_Rule {
 
             }
         }
-
-        //계차수열
-        difference_Sequence dS = new difference_Sequence();
-        //조화수열
-        harmonic_Sequence hS = new harmonic_Sequence();
         //피보나치 수열
-        fibonacci_Sequence fS = new fibonacci_Sequence();
+        fibonacci_Sequence fS = new fibonacci_Sequence(num);
+        if (fS.getAvailable()) {
+            System.out.print("The numbers you entered are fibonacci sequence" +
+                    ".\nDo you find the other term?" +
+                    "\n1. Yes\t2. No" +
+                    "\n-> ");
+            int examA = sc.nextInt();
+            boolean examB = true;
+            while (examB) {
+                if (examA == 1) {
+                    print_UserK();
+                    fS.find_out_term(sc.nextLong());
+                    while (fS.getM() == -1 || fS.getM() == Long.MAX_VALUE) {
+                        if (fS.getM() == -1) {
+                            print_WrongValue();
+                            fS.find_out_term(sc.nextLong());
+                        }
+                        else {
+                            print_Overflow();
+                            fS.find_out_term(sc.nextLong());
+                        }
+                    }
+                    System.out.print("When first-term is " + 1 + ", ");
+                    print_kTerm_answer(fS.getK(), fS.getM());
+                    examB = false;
+                }
+                else if (examA == 2) {
+                    System.out.print("The numbers you entered is a fibonacci sequence." +
+                            "\n-> " +
+                            Arrays.toString(num));
+                    examB = false;
+                }
+                else {
+                    print_WrongValue();
+                    examA = sc.nextInt();
+                }
 
+            }
+        }
     }
 
     public static void print_Overflow() {
-        System.out.print("This term is out of integer range. (2147483647 ++)" +
+        System.out.print("This term is out of integer range. (\t\n" +
+                "9,223,372,036,854,775,808 ++)" +
                 "\nPlease try again." +
                 "\n-> ");
     }
@@ -185,7 +222,8 @@ public class sequence_Number_Rule {
                 "\n-> ");
     }
     public static void print_kTerm_answer(long k, long m) {
-        System.out.println("The value of the " + k + " term is " + m);
+        DecimalFormat decimalFormat = new DecimalFormat("###,###");
+        System.out.println("The value of the " + decimalFormat.format(k) + " term is " + decimalFormat.format(m));
     }
 
 }

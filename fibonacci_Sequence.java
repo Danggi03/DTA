@@ -4,11 +4,11 @@ public class fibonacci_Sequence {
     /**
      * 피보나치 수열
      */
-    static long[] a;  // a: 사용자로부터 입력받은 항들
-    static long k;    // k: 사용자가 추가적으로 k번째 항의 수를 알기 위해 필요시 입력할 상수
-    static long m;    // m: 사용자가 만약 다른 항의 값을 알아보려고 했을 때 저장되는 상수
-    static boolean available; //해당 클래스가 사용가능한지.
-    static String seqName = "Fibonacci-Sequence";
+    long[] a;  // a: 사용자로부터 입력받은 항들
+    long k;    // k: 사용자가 추가적으로 k번째 항의 수를 알기 위해 필요시 입력할 상수
+    long m;    // m: 사용자가 만약 다른 항의 값을 알아보려고 했을 때 저장되는 상수
+    boolean available; //해당 클래스가 사용가능한지.
+    String seqName = "Fibonacci-Sequence";
     public fibonacci_Sequence(long[] userA) {
         a = userA;
         for (int freq = 0; freq <= a.length - 3; freq++)

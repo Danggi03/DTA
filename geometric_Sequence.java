@@ -4,12 +4,12 @@ public class geometric_Sequence extends sequence_Number_Rule {
     /**
      * 등비수열
      */
-    static long[] a;  // a: 사용자로부터 입력받은 항들
-    static int r;    // r: ratio; 비
-    static long k;    // k: 사용자가 추가적으로 k번째 항의 수를 알기 위해 필요시 입력할 상수
-    static long m;    // m: 사용자가 만약 다른 항의 값을 알아보려고 했을 때 저장되는 상수
-    static boolean available; //해당 클래스가 사용가능한지.
-    static String seqName = "Geometric-Sequence";
+    long[] a;  // a: 사용자로부터 입력받은 항들
+    int r;    // r: ratio; 비
+    long k;    // k: 사용자가 추가적으로 k번째 항의 수를 알기 위해 필요시 입력할 상수
+    long m;    // m: 사용자가 만약 다른 항의 값을 알아보려고 했을 때 저장되는 상수
+    boolean available; //해당 클래스가 사용가능한지.
+    String seqName = "Geometric-Sequence";
     public geometric_Sequence(long[] usersA) {
         //a[0] = a a[1] = b a[2] = c
         a = usersA;
